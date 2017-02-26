@@ -1,22 +1,15 @@
 {
-	"batters":
+	"data":
 		{
-			"batter":
+			"videos":
 				[
-					{ "id": "1001", "type": "Regular" },
-					{ "id": "1002", "type": "Chocolate" },
-					{ "id": "1003", "type": "Blueberry" },
-					{ "id": "1004", "type": "Devil's Food" }
+					{ "name": "Shy Luv, JONES - Shock Horror (Official Video)", "type": "youtube" , "id": "vehdGO-zIY8"},
+					{ "name": "1002", "type": "youtube" , "id": "zrhidNRBfPo"}
 				]
 		},
-	"topping":
+	"playlists":
 		[
-			{ "id": "5001", "type": "None" },
-			{ "id": "5002", "type": "Glazed" },
-			{ "id": "5005", "type": "Sugar" },
-			{ "id": "5007", "type": "Powdered Sugar" },
-			{ "id": "5006", "type": "Chocolate with Sprinkles" },
-			{ "id": "5003", "type": "Chocolate" },
-			{ "id": "5004", "type": "Maple" }
+			{ "name": "5001", "uri": "None" },
+			{ "name": "5002", "uri": "Glazed" }
 		]
 }

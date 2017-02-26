@@ -43,7 +43,7 @@ request('http://localhost:3000/db', function (error, response, body) {
   console.log('error:', error); // Print the error if one occurred
   console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
   var jsonObject = JSON.parse(body);
-  console.log('body:', jsonObject.batters.batter[0].id); // Print the HTML for the Google homepage.
+  console.log('body:', jsonObject.data.videos); // Print the HTML for the Google homepage.
 });
 
 //---------------------------------------------------
