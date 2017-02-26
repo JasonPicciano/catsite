@@ -24,7 +24,7 @@
     <button onclick="PrevVideo()" type="button">Previous Video</button>
   </div>
   <script id="video" type="text/x-handlebars-template">
-    <h1>Video List {{name}}</h1>
+    <h3>Video List {{name}}</h3>
     <div class="media">
 
       <div class="media-body">
@@ -54,8 +54,9 @@
     $('.player').hover(function () {
       $(this).addClass('magictime spaceInLeft');
      });
+
      $('.title').hover(function () {
-       $(this).addClass('magictime spaceInLeft');
+       $(this).addClass('magictime spaceInRight');
       });
 
         // 2. This code loads the IFrame Player API code asynchronously.
