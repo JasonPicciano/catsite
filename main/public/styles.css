@@ -1,18 +1,70 @@
-#webgl {
-position: fixed;
-clear: both;
+#threed {
 width: 100%;
 height: 100%;
-z-index: -1;
-left no-repeat; }
+position: fixed;
+z-index: -1 }
 
 #nav{
-background-color: azure;}
+background-color: black;
+float: right;
+color: fuchsia;
+max-width: 500px}
+
+
+a {
+color: fuchsia;
+padding: 10px;
+}
+
+#container{
+  padding-right: 10px;
+
+}
+#title{
+  background-color: azure;
+  max-width: 325px;
+  padding: 5px;
+  float: right;
+  position: relative;
+  outline: 1px solid crimson;
+  clear:both;
+  font-size: 26px;
+
+}
+
+
+#prev{
+float: right;
+clear: right;
+margin: 10px 0px;
+outline: 1px solid red; }
+
+.next{
+  margin: 10px 0px;
+  float: right;
+  clear: left;
+  outline: 1px solid purple;
+}
 
 #video-div{
-background-color: azure;
+  background-color: azure;
+  outline: 1px solid red;
+  margin: 10px 0px;
+  padding: 10px;
+  position: relative;
+  float: right;
+  clear: both;
+  min-width: 500px}
+
+#player{
+  margin: 0px;
+  float: right;
+  width: 100%;
+  background-color: black
 }
 
-#title{
-background-color: azure;
-}
+#iframe{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;}
