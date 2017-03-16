@@ -10,6 +10,30 @@ float: right;
 color: fuchsia;
 max-width: 500px}
 
+.js-video {
+  height: 0;
+  padding-top: 25px;
+  padding-bottom: 67.5%;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.js-video.widescreen {
+  padding-bottom: 56.34%;
+}
+
+.js-video.vimeo {
+  padding-top: 0;
+}
+
+.js-video embed, .js-video iframe, .js-video object, .js-video video {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
 
 a {
 color: fuchsia;
@@ -32,6 +56,11 @@ padding: 10px;
 
 }
 
+#videoTitle{
+  text-align: center;
+  outline: 1px solid red;
+
+}
 
 #prev{
 float: right;
@@ -46,7 +75,7 @@ outline: 1px solid red; }
   outline: 1px solid purple;
 }
 
-#video-div{
+#videoArea{
   background-color: azure;
   outline: 1px solid red;
   margin: 10px 0px;
@@ -55,6 +84,13 @@ outline: 1px solid red; }
   float: right;
   clear: both;
   min-width: 500px}
+
+
+}
+
+
+#video-div{
+}
 
 #player{
   margin: 0px;

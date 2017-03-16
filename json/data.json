@@ -3,8 +3,11 @@
 		{
 			"videos":
 				[
-					{ "name": "Shy Luv, JONES - Shock Horror (Official Video)", "type": "youtube" , "id": "vehdGO-zIY8"},
-					{ "name": "1002", "type": "youtube" , "id": "zrhidNRBfPo"}
+					{ "name": "Shy Luv, JONES - Shock Horror (Official Video)", "type": "youtube" , "desc": "This video we found slkdnfslkdnflsdf", "id": "vehdGO-zIY8"},
+					{ "name": "Fever The Ghost - SOURCE", "type": "youtube" , "id": "9RHFFeQ2tu4"},
+					{ "name": "LORN - ANVIL", "type": "youtube" , "id": "CqaAs_3azSs"},
+					{ "name": "Blockhead - The Music Scene", "type": "youtube" , "id": "NhheiPTdZCw"},
+					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE"}
 				]
 		},
 	"playlists":

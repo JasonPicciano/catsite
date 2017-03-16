@@ -10,14 +10,14 @@
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <body>
     <div id="3DBackground" class="threed">
-      <iframe id="iframe" src="../WebGl/flower/electricflower.html" ></iframe>
+      <!-- <iframe id="iframe" src="../WebGl/flower/electricflower.html" ></iframe> -->
+     <iframe id="iframe" src="https://c1.goote.ch/662b3b62924c4beea003e1049465ce73.scene/" ></iframe>
     </div>
 
     <nav id = "nav">
       <a href="index.html">Home</a> |
     </nav>
-
-    <div id= "container">
+    <div id = "counter"> </div>
 
       <div id= "prev">
        <button onclick="PrevVideo()" type="button">Previous Video</button>
@@ -28,116 +28,103 @@
       </div>
 
 
+
+      </div>
+
       <div id = "title">
         Where Videos Rule
+    </div>
+      <div id="videoArea">
+        <div id="videoPlayer" class="js-video [vimeo, widescreen]"></div>
+        <div id="video-div"></div>
       </div>
 
 
 
-      <div id="video-div" ></div>
-    </div>
+
+    <script id="counterTemp" type="text/x-handlebars-template">
+          <div>
+             <b>This is the: </b>
+          </div>
+    </script>
 
   <script id="video" type="text/x-handlebars-template">
-      Video List {{name}}
+        <div id="videoTitle">
+          <b>Video Title: {{name}}</b>
+        </div>
       <div class="media">
-
         <div class="media-body">
           <dl class="dl-horizontal">
-            <dt>Name</dt><dd class="clearfix">{{name}}</dd>
             <dt>Type</dt><dd>{{type}}</dd>
+            <div id="player" ></div>
+            <dt>Description</dt><dd>{{desc}}</dd>
           </dl>
         </div>
       </div>
-
-      <div id="player" ></div>
-
-
-
   </script>
 
 
   <script>
-    $('.player').hover(function () {
-      $(this).addClass('magictime spaceInLeft');
-     });
 
-     $('.title').hover(function () {
-       $(this).addClass('magictime spaceInRight');
-      });
+         var videoDiv = document.getElementById('videoPlayer');
+         var CurrentVideoCounter;
+         var dataset;
 
-        // 2. This code loads the IFrame Player API code asynchronously.
-        var tag = document.createElement('script');
+         var videoSource = document.getElementById('video').innerHTML,
+             videoTemplate = Handlebars.compile(videoSource),
+             videoPlaceholder = document.getElementById('video-div');
 
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+         fillDataset();
+          function fillDataset (){
+          $.get('http://localhost:3000/db', {}, function(data){
+              dataset = data;
+              console.log("Dataset is filled")
 
-        // 3. This function creates an <iframe> (and YouTube player)
-        //    after the API code downloads.
-        var player;
-        var database;
-        var VidID;
-        $.get('http://localhost:3000/db', {}, function(data){
-          database = data;
-         });
 
-        function onYouTubeIframeAPIReady(VidID) {
 
-          if (VidID === undefined){VidID = 0};
-          player = new YT.Player('player', {
-            height: '390',
-            width: '640',
-            videoId: database.data.videos[VidID].id,
-            events: {
-              'onReady': onPlayerReady,
-            }
+                  videoPlaceholder.innerHTML = videoTemplate(dataset.data.videos[0]);
+
+              var videoID = dataset.data.videos[0].id;
+              var html = '<iframe width="640" height="390" src="http://www.youtube.com/embed/' + videoID + '?showinfo=0" frameborder="0" allowfullscreen></iframe>'
+              videoDiv.innerHTML = html;
+              CurrentVideoCounter = 0
+
           });
-        }
+        };
 
-        // 4. The API will call this function when the video player is ready.
-        function onPlayerReady(event) {
-          //event.target.playVideo();
+        function PrevVideo(){
+         if (CurrentVideoCounter == 0){
+          console.log("Cannot go to previous Video");
+          return
+
+         }
+         else{
+
+           var videoID = dataset.data.videos[CurrentVideoCounter-1].id;
+           html = '<iframe width="640" height="390" src="http://www.youtube.com/embed/' + videoID + '?showinfo=0" frameborder="0" allowfullscreen></iframe>'
+           videoDiv.innerHTML = html;
+           videoPlaceholder.innerHTML = videoTemplate(dataset.data.videos[CurrentVideoCounter-1]);
+           CurrentVideoCounter = CurrentVideoCounter-1;
+         }
         }
 
         function NextVideo(){
-          if (VidID === undefined){VidID = 0};
-          console.log("New ID! " + VidID);
-          var vid = database.data.videos[VidID+1].id
-          if (vid == undefined){console.log("No more vids yo");return}
-          console.log("New ID! " + vid);
-          player.loadVideoById({videoId:vid,
-                      suggestedQuality:"large"})
-        }
+         var limit = dataset.data.videos.length;
+         if (CurrentVideoCounter == limit - 1){
+          console.log("Cannot go to Next Video");
+          return
 
-        function PrevVideo(){
-          if (VidID === undefined){return};
+         }
+         else{
 
-          var vid = database.data.videos[VidID-1].id
-          if (vid == undefined){console.log("No more vids yo");return}
-          console.log("New ID! " + vid);
-          player.loadVideoById({videoId:vid,
-                      suggestedQuality:"small"})
+           var videoID = dataset.data.videos[CurrentVideoCounter+1].id;
+           html = '<iframe width="640" height="390" src="http://www.youtube.com/embed/' + videoID + '?showinfo=0" frameborder="0" allowfullscreen></iframe>'
+           videoDiv.innerHTML = html;
+           videoPlaceholder.innerHTML = videoTemplate(dataset.data.videos[CurrentVideoCounter+1]);
+           CurrentVideoCounter = CurrentVideoCounter+1;
+         }
         }
   </script>
-
-
-  <script>
-  //Script to pull in db data
-    //debugger;
-    (function() {
-      var videoSource = document.getElementById('video').innerHTML,
-          videoTemplate = Handlebars.compile(videoSource),
-          videoPlaceholder = document.getElementById('video-div');
-
-      $.get('http://localhost:3000/db', {}, function(data){
-        console.log(data.data.videos[0]);
-            videoPlaceholder.innerHTML = videoTemplate(data.data.videos[0])
-       });
-
-    })();
-  </script>
-
-
 
 </body>
 </html>
