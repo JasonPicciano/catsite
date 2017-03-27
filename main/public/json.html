@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+   <link rel="stylesheet" href="jsoneditor.css"/>
+   <script src="jquery.min.js"></script>
+   <script src="jquery.jsoneditor.js"></script>
+   <script src="fs.js"></script>
+</head>
+
+<div id="mydiv" class="mydiv">
+</div>
+
+  <textarea class="json" id="json"></textarea><br/>
+
+<div class="SaveArea">
+    <button onclick="SaveInfo()">Save Information</button>
+
+</div>
+
+<script>
+var myjson
+
+$.get('http://localhost:3000/db', {}, function(data){
+  //var myjson = { any: { json: { value: 1 } } };
+    myjson = data;
+     var opt = {
+         change: function(data) {
+            document.getElementById('json').value = JSON.stringify(data,null,'\t');
+            myjson = JSON.stringify(data.data,null,'  ');
+       },
+         propertyclick: function(path) { /* called when a property is clicked with the JS path to that property */ }
+     };
+     /* opt.propertyElement = '<textarea>'; */ // element of the property field, <input> is default
+     /* opt.valueElement = '<textarea>'; */  // element of the value field, <input> is default
+
+     $('#mydiv').jsonEditor(myjson, opt);
+
+});
+
+
+function SaveInfo(){
+  var newJSON = document.getElementById("json").value;
+  $.post('http://localhost:3000/data', newJSON);
+}
+
+
+</script>
+
+
+</html>

@@ -3,11 +3,28 @@
 		{
 			"videos":
 				[
-					{ "name": "Shy Luv, JONES - Shock Horror (Official Video)", "type": "youtube" , "desc": "This video we found slkdnfslkdnflsdf", "id": "vehdGO-zIY8"},
-					{ "name": "Fever The Ghost - SOURCE", "type": "youtube" , "id": "9RHFFeQ2tu4"},
-					{ "name": "LORN - ANVIL", "type": "youtube" , "id": "CqaAs_3azSs"},
-					{ "name": "Blockhead - The Music Scene", "type": "youtube" , "id": "NhheiPTdZCw"},
-					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE"}
+					{ "name": "Shy Luv, JONES - Shock Horror (Official Video)", "type": "youtube" , "desc": "This video we found slkdnfslkdnflsdf", "id": "vehdGO-zIY8", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Fever The Ghost - SOURCE", "type": "youtube" , "id": "9RHFFeQ2tu4", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "LORN - ANVIL", "type": "youtube" , "id": "CqaAs_3azSs", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Blockhead - The Music Scene", "type": "youtube" , "id": "NhheiPTdZCw", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"},
+					{ "name": "Rone - Bye Bye Macadam", "type": "youtube" , "id": "kfoJUeyMsOE", "thumb": "http://img.youtube.com/vi/9RHFFeQ2tu4/0.jpg"}
 				]
 		},
 	"playlists":

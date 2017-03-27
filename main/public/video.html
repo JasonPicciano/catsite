@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="styles.css">
-<link rel="stylesheet" href="magic.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="magic.css">
 </head>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
@@ -27,20 +27,14 @@
         <button onclick="NextVideo()" type="button">Next Video</button>
       </div>
 
-
-
-      </div>
-
       <div id = "title">
         Where Videos Rule
-    </div>
+      </div>
+
       <div id="videoArea">
         <div id="videoPlayer" class="js-video [vimeo, widescreen]"></div>
         <div id="video-div"></div>
       </div>
-
-
-
 
     <script id="counterTemp" type="text/x-handlebars-template">
           <div>
@@ -62,10 +56,16 @@
         </div>
       </div>
   </script>
+<div id= "vid-list-container" class="vid-list-container">
+</div>
 
+<figure id="video_player">
+	<figcaption id="figcap">
+
+	</figcaption>
+</figure>
 
   <script>
-
          var videoDiv = document.getElementById('videoPlayer');
          var CurrentVideoCounter;
          var dataset;
@@ -80,8 +80,6 @@
               dataset = data;
               console.log("Dataset is filled")
 
-
-
                   videoPlaceholder.innerHTML = videoTemplate(dataset.data.videos[0]);
 
               var videoID = dataset.data.videos[0].id;
@@ -91,6 +89,52 @@
 
           });
         };
+
+              //This Section Fills the Playlist Tile Carousel thingy
+  $.get('http://localhost:3000/db', {}, function(dataset1){
+      for(var i=0; i< dataset1.data.videos.length-1;i++){
+        var videoTile = dataset1.data.videos[i].thumb;
+        var videoDesc = dataset1.data.videos[i].name;
+        var videoID = dataset1.data.videos[i].id;
+
+
+        var VidTileContainer = document.getElementById("vid-list-container");
+        //Add the Item
+        var item = document.createElement('div');
+        item.className = ("vid-item");
+        VidTileContainer.appendChild(item);
+        //Add the Item's details
+        var img = document.createElement('img');
+        img.src = videoTile;
+        var thumb = document.createElement('div');
+        thumb.className = "thumb"
+        thumb.appendChild(img);
+        var desc = document.createElement('div');
+        desc.className = ("desc");
+        desc.textContent = videoDesc
+
+        item.appendChild (thumb);
+        item.appendChild (desc);
+        //------------------this is the new try
+        var figcaption = document.getElementById("figcap");
+        var newChild = document.createElement("a");
+        figcaption.appendChild(newChild);
+        newChild.img.src = videoTile;
+
+
+
+
+
+
+
+
+
+
+
+
+}
+});
+
 
         function PrevVideo(){
          if (CurrentVideoCounter == 0){
